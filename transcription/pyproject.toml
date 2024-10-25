@@ -1,0 +1,61 @@
+[project]
+name = "sign-transcription"
+description = "Models involved in transcribing sign language"
+version = "0.0.1"
+authors = [
+    { name = "Amit Moryossef", email = "amitmoryossef@gmail.com" }
+]
+readme = "README.md"
+dependencies = [
+    "joeynmt",
+    "sentencepiece",
+    "numpy",
+    "opencv-python",
+    "pose-format",
+    "torch",
+    "tqdm"
+]
+
+[project.optional-dependencies]
+dev = [
+    "tensorflow",
+    "fonttools",
+    "tensorflow-datasets",
+    "sign-language-datasets",
+    "wandb",
+    "pytorch_lightning",
+    "mediapipe",
+    "scikit-learn",
+    "pytest",
+    "pylint"
+]
+
+[tool.yapf]
+based_on_style = "google"
+column_limit = 120
+
+[tool.setuptools]
+packages = [
+    "_shared",
+
+    "video_to_pose",
+
+    "pose_to_text",
+
+    "text_to_pose",
+
+    "text_to_text",
+]
+
+
+[tool.pytest.ini_options]
+addopts = "-v"
+testpaths = [
+    "_shared",
+    "video_to_pose",
+    "pose_to_text",
+    "text_to_pose"
+]
+
+[project.scripts]
+video_to_pose = "video_to_pose.bin:main"
