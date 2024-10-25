@@ -16,7 +16,7 @@ parser.add_argument('--config_file', type=str, default="", help='path to yaml co
 parser.add_argument('--seed', type=int, default=42, help='random seed')
 parser.add_argument('--num_gpus', type=int, default=1, help='how many gpus?')
 parser.add_argument('--batch_size', type=int, default=64, help='batch size')
-parser.add_argument('--max_epochs', type=int, default=2000, help='max number of epochs')
+parser.add_argument('--max_epochs', type=int, default=10, help='max number of epochs')
 parser.add_argument('--learning_rate', type=float, default=1e-4, help='optimizer learning rate')
 
 # Data Arguments
